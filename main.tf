@@ -1,11 +1,16 @@
+variable "db_clusterid" {}
+variable "db_name" {}
+variable "db_username" {}
+variable "db_password" {}
+
 resource "aws_rds_cluster" "default" {
-  cluster_identifier      = "aurora-cluster-demo"
-  engine                  = "aurora-mysql"  
+  cluster_identifier      = var.db_clusterid
+  engine                  = "aurora-postgres"  
   engine_mode             = "serverless"  
-  database_name           = "myauroradb"  
+  database_name           = var.db_name
   enable_http_endpoint    = true  
-  master_username         = "sa"
-  master_password         = "232-3sdcrb34gh134rrtn6uk89k78j5h"
+  master_username         = var.db_username
+  master_password         = var.db_password
   backup_retention_period = 1
   skip_final_snapshot     = true
   
