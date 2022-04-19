@@ -5,7 +5,7 @@ variable "db_password" {}
 
 resource "aws_rds_cluster" "default" {
   cluster_identifier      = var.db_clusterid
-  engine                  = "aurora-postgres"  
+  engine                  = "aurora-postgresql"  
   engine_mode             = "serverless"  
   database_name           = var.db_name
   enable_http_endpoint    = true  
