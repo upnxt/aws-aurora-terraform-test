@@ -20,7 +20,7 @@ resource "aws_rds_cluster" "default" {
   scaling_configuration {
     auto_pause               = true
     min_capacity             = 1    
-    max_capacity             = 1
+    max_capacity             = 2
     seconds_until_auto_pause = 300
     timeout_action           = "ForceApplyCapacityChange"
   }  
