@@ -1,3 +1,4 @@
+variable "vpc_id" {}
 variable "db_clusterid" {}
 variable "db_name" {}
 variable "db_username" {}
