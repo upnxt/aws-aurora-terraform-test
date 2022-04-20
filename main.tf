@@ -1,4 +1,4 @@
-variable "vpc_id" {}
+variable "sg_ids" {}
 variable "db_clusterid" {}
 variable "db_name" {}
 variable "db_username" {}
@@ -9,7 +9,7 @@ resource "aws_rds_cluster" "default" {
   engine                  = "aurora-postgresql"  
   engine_mode             = "serverless"
   availability_zones      = ["${var.aws_region}a", "${var.aws_region}b", "${var.aws_region}c"]
-  vpc_security_group_ids  = [var.vpc_id]
+  vpc_security_group_ids  = var.sg_ids
   database_name           = var.db_name
   enable_http_endpoint    = true  
   master_username         = var.db_username
