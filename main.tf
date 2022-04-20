@@ -10,7 +10,7 @@ resource "aws_rds_cluster" "default" {
   engine_mode             = "serverless"
   availability_zones      = ["${var.aws_region}a", "${var.aws_region}b", "${var.aws_region}c"]
   vpc_security_group_ids  = var.sg_ids
-  database_name           = var.db_name
+  database_name           = var.db_name #alphanumeric
   enable_http_endpoint    = true  
   master_username         = var.db_username
   master_password         = var.db_password
